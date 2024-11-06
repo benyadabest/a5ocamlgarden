@@ -1,0 +1,38 @@
+*Task 3: Proof by Induction*
+
+Inductive Statement: Let property P(b) = int_of_bin (inc b) = 1 + int_of_bin b forall b
+
+Base Cases:
+P(B0) is int_of_bin (inc B0) = 1 + int_of_bin B0:
+int_of_bin B0 = 0
+inc B0 = B1
+int_of_bin (inc B0) = int_of_bin B1 = 1
+1 + int_of_bin B0 = 1 + 0 = 1
+sp P(B0) holds
+P(B1) is int_of_bin (inc B1) = 1 + int_of_bin B1:
+int_of_bin B1 = 1
+inc B1 = B0(B1)
+int_of_bin (B0(B1)) = 2
+1 + int_of_bin B1 = 1 + 1 = 2
+so P(B1) holds
+
+Inductive Hypothesis:
+For some binary number k P(k) holds. P(k) = int_of_bin (inc k) = 1 + int_of_bin k
+
+Inductive Step: Wish to prove P(B0 k) = int_of_bin (inc (B0 k)) = 1 + int_of_bin (B0 k)
+int_of_bin (B0 k) = 2 * int_of_bin k
+inc (B0 k) = B1 k
+int_of_bin (B1 k) = 2 * int_of_bin k + 1
+1 + int_of_bin (B0 k) = 1 + 2 * int_of_bin k = 2 * int_of_bin k + 1
+so P(B0 k) holds
+P(B1 k)= int_of_bin (inc (B1 k)) = 1 + int_of_bin (B1 k)
+int_of_bin (B1 k) = 2 * int_of_bin k + 1
+inc (B1 k) = B0 (inc k)
+int_of_bin (B0 (inc k)) = 2 * int_of_bin (inc k)
+By IH: 2 * int_of_bin (inc k) = 2 * (1 + int_of_bin k)
+1 + int_of_bin (B1 k) = 1 + (2 * int_of_bin k + 1) = 2 * int_of_bin k + 2 = 2 * (1 + int_of_bin k)
+therefor P(B1 k) holds
+
+Conclusion:
+By principle of induction, we proved for all binary numbers b property int_of_bin (inc b) = 1 + int_of_bin b
+holds

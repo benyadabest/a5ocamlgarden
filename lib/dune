@@ -1,3 +1,4 @@
 (library
  (name a5)
- (libraries batteries))
+ (libraries ANSITerminal)
+ (modules plant garden))

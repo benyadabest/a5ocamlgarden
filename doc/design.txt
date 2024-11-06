@@ -1,0 +1,24 @@
+*Overview*
+This simulation models organic-patterned distributed plant growth in a 2D grid-based garden, where plants exhibit basic lifecycle behaviors. 
+Each plant grows, loses health over time, reproduces when it reaches a certain size, and eventually dies. 
+
+*Plant Dynamics*
+Each plant starts with a specific health value that decreases with each time step. Dies if reach 0 or max height or age 20.
+Each plant has 20% chance to grow each time step. Stops at maxinum height of 7.
+If plant reaches height of 5, new plant randomly chosen adjacent cell (if available).
+if reaches max height of 7, seeds additional plant randomly chosen adjacent cell (if available).
+Age increments by 1 each step.
+
+*Garden Dynamics*
+Fixed size 2D grid that's customized on creation. 
+Each time step, garden iterates over each plant to apply growth, health, reproduction, and death rules.
+Randomness applied to growth, reproduction, and seeding. Creates variety in garden's appearance and evolution over time. 
+Green and * represents plants with age less than 5, green represents growth
+Yellow and o represents plants with age between 5 and 10, yellow represents stability
+Red and T represents plants with age greater than 10, red represents ending of lifecycle
+
+*Simulation Logic*
+Initializes with randomly placed plants.
+Updates rules at each time steps, all plants health decreases, 20% chance of growing, if height is 5 -> seed adjacent plant, if height is 7 -> die and seed adjacent plant.
+
+It should be engaging and plants growing in empty areas is natural!

@@ -1,3 +1,4 @@
 Author: Benjamin Shvartsman bs828
 
-Collaborators: None
+Collaborators:
+Went to office hours to fix formatting issues due to vscode or my computer, no one could figure it out. Code pasted into chagpt and asked it to foramt on my behalf. Also asked for guidance with Buffer and when key word.
